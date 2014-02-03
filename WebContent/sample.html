@@ -1,0 +1,205 @@
+
+<html>
+<head>
+    <title>Jon Froehlich</title>
+
+    <link type="text/css" rel="stylesheet" href="styles/styles.css" />
+
+    <script src="jquery-1.6.4.min.js"></script>
+    <script src="jonUtils.js"></script>
+    <script src="jonNews.js"></script>
+    <script src="jonTravel.js"></script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28482802-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <script>      
+        //ondomready
+        $(function () {
+            loadXmlNewsData();
+            loadXmlTravelData();
+        });
+    </script>
+</head>
+<body>
+    <!-- TODO 
+         1. Make frontpage less text heavy and include images in research area descriptions
+         2. Update scripts to automatically fill-in news and travel with a "more..." section 
+         3. Clean up paths; put scripts in /scripts put images in /images, etc.
+         4. Fix IE layout bug; all content is forced left, not centered.
+         5. Add in Calendar page, which will have GCal, Travel, and News like my UW page
+         6. Add a Teaching page with links to my classes, to teaching philosophy, etc.
+         7. Add a Talks page based on pubs page that is searchable by keyword, etc.
+         8. Add link to research blog
+    -->
+    <div id="container">
+        <div id="menu_header">
+           <div id="nav">
+				<ul class="sf-menu dropdown">
+				    <li class="selected"><a href="index.html">Home</a></li>             
+				    <li><a href="publications.html">Publications</a></li>
+				    <li><a href="talks.html">Talks</a></li>
+                    <li><a href="advising.html">Advising</a></li>
+				    <li><a href="teaching.html">Teaching</a></li>
+                    <li><a href="cv.html">CV</a></li>
+				    <li><a href="calendar.html">Calendar</a></li>
+				    <!--<li><a href="cv.html">CV</a></li>-->
+				</ul>
+			</div>
+        </div>
+        <div id="name_header">
+            Jon Froehlich
+        </div>
+        <div id="content_container">
+            <div id="body_left" class="column">
+                <img class="mugshot" src="JonFroehlich.png" />
+                Assistant Professor, <a href="http://www.cs.umd.edu">Computer Science</a><br />
+				Affiliate Assistant Professor, <a href="http://ischool.umd.edu/">iSchool</a><br />
+                University of Maryland, College Park<br />
+                <br />
+                <span class="column_header">Contact</span><br/>
+                twitter: <a href="http://twitter.com/jonfroehlich">@jonfroehlich</a><br />
+                email: <a href="mailto:jonf@umd.edu">jonf@umd.edu</a><br />
+                <br />
+                CS Office:<br />
+                Ph. (301) 405-8412<br />
+                3173 AV Williams<br />
+                Department of Computer Science<br />
+                University of Maryland<br />
+                College Park, MD 20742<br />
+                <br />
+                <a href="http://www.cs.umd.edu/hcil/contact/travel_to_hcil.shtml">HCIL Office:</a><br />
+				Ph. (301) 405-1085<br />
+                2117F Hornbake Library, South<br />
+				Human-Computer Interaction Lab<br />
+                University of Maryland<br />
+                College Park, MD 20742<br />
+                <br />
+                <span class="column_header">Travel/Events</span><br/>
+                <div id="travel_feed">
+                </div>
+				<span class="column_header">My PhD Students</span><br/>
+				<a href="http://kotarohara.com/">Kotaro Hara</a><br/>
+				<a href="http://www.cs.umd.edu/~mattm/">Matt Mauriello</a><br/><br/>
+				<span class="column_header">My MS Students</span><br/>
+				<a href="http://www.michaelgubbels.com/">Michael Gubbels</a><br/>
+				<a href="http://terpconnect.umd.edu/~leylan/">Leyla Norooz</a><br/>
+            </div>
+            <div id="body_content">
+                <span class="content_header">About Me</span><br/>
+                I am an Assistant Professor in the <a href="http://www.cs.umd.edu/">Department of Computer Science</a> 
+                at the University of Maryland, College Park 
+                with an affiliate appointment in the <a href="http://ischool.umd.edu/">College of Information Studies</a>. 
+                I am also a member of the <a href="http://www.cs.umd.edu/hcil/">Human-Computer Interaction Laboratory (HCIL),</a> 
+                the <a href="http://www.umiacs.umd.edu/">Institute for Advanced Computer Studies (UMIACS)</a>, and
+                the founder of the new HCIL Hackerspace and HCIL lablet: the Makeability Lab. Research in the Makeability Lab  is funded, in part,
+		by a Google Faculty Research Award, a 3M Faculty Award, and by Nokia and the NSF.
+                <p></p>
+                I received my Phd in Computer Science from the University of Washington in December 2011 where I was a 
+                <a href="http://research.microsoft.com/en-us/collaboration/global/northam/northam-fellows.aspx">
+                Microsoft Research Graduate Fellow</a> and the 2010 College of Engineering "Graduate Innovator of the Year." 
+                My PhD dissertation entitled <a href="publications.html#Thesis">"Sensing and Feedback of Everyday Activities to Promote Environmental Behaviors"</a>
+                won numerous awards including the 2012 University of Washington Distinguished Dissertation Award and an 
+                honorable mention for the national 2012 Council of Graduate Schools Distinguished Dissertation Award in Mathematics, Physical Sciences, and Engineering. 
+                At UW, I was co-advised by <a href="http://www.cs.washington.edu/homes/landay/">James Landay</a> and <a href="http://abstract.cs.washington.edu/~shwetak/">Shwetak Patel</a>.
+                I also have an MS in Information and Computer Science from the University of California, Irvine where I was advised by <a href="http://www.dourish.com/">Paul Dourish</a>. 
+                During my graduate studies, I was fortunate to intern at a 
+number of great research labs including <a 
+href="http://www.tid.es/en/Research">Telefonica Research</a> in Barcelona, 
+                <a href="http://research.microsoft.com/en-us/labs/redmond/default.aspx">Microsoft Research</a> in Redmond, 
+                and <a href="http://techresearch.intel.com/newsdetail.aspx?Id=27">Intel Research</a> in Seattle.
+                <p></p>
+                My work has been published in over 30 scientific peer-reviewed publications in many top venues including ACM CHI, UbiComp, IJCAI, MobiSys, ASSETS, and ICSE
+                garnering three best paper awards (CHI'10, CHI'13, ASSETS'13)  and three best paper nominations (UbiComp'09, CHI'12, CHI'13). Please see my <a 
+href="publications.html">publication page</a> and/or 
+                <a href="http://scholar.google.com/citations?user=nExKrpsAAAAJ&hl=en">Google Scholar page</a> for more details.
+                <p></p>
+                <span class="content_header">Research Focus</span><br/>
+                My research focuses on designing, building, and evaluating interactive technology that addresses high 
+                value social issues such as environmental sustainability, computer accessibility, and personalized 
+                health and wellness. This work often involves the entire spectrum of information flow: from sensing 
+                physical events, to intelligently interpreting/classifying this data, to building visualizations that 
+                inform and motivate behavior. Please see my list of publications <a href="publications.html">here</a>.
+                <p></p>
+                My research interests can broadly be broken down into four areas:
+                <p></p>
+                <span class="content_subheader">Sensing and Feedback Systems for Environmental Behaviors</span><br/>
+                There is often a profound disconnect between our everyday behaviors and the effects those behaviors 
+                have on our health and the environment around us. In this research, I explore how technology can be 
+                used to effectively sense and report information about environmental behaviors to promote awareness 
+                and enable positive behavior change. Research questions involved here include: What behaviors
+                should we sense and how? How, where, and when should this sensed activity data be presented? And, finally,
+                What impact can sensing and feedback have on behavior?
+                <p></p>
+                <span class="content_subheader">Smart Cities and Sustainable Transport</span><br />
+                City-wide urban infrastructures are increasingly reliant on network technology to improve and expand 
+                their services. As a consequence, our interactions in the physical world are increasingly leaving 
+                behind digital  footprints. In this research, I explore how these digital footprints can reveal otherwise 
+                latent patterns of human behavior as well as implications for the improvement of city infrastructures 
+                themselves (e.g., shared bicycling programs, rail and bus systems).
+                <p></p>
+                <span class="content_subheader">Health and Wellness</span><br />
+                As sensors continue to decrease in size/price and advances in machine learning enable better and more 
+                granular activity recognition, there is an enormous opportunity for sensing and feedback applications 
+                for personal health particularly around sleeping, diet, and exercise. In the long term, I hope to 
+                continue building and studying applications that motivate positive behaviors for both health and the 
+                environment. Significant questions remain: What are the most effective strategies for motivating behaviors? 
+                Can systems adapt their strategies to fit the individual user? How can we use technology to sustain behaviors 
+                over time? What is the role of augmented reality and other forms of emerging media?
+                <p></p>
+				<span class="content_subheader">Computer and World Accessibility</span><br />
+                As we increasingly rely on computers and mobile devices to support everyday tasks such as bill paying,
+				internet browsing, and social communication, both new opportunities and new challenges emerge for those with 
+				physical and/or cognitive disabilities. My interest in computer accessibility goes beyond simply investigating
+				how computers can be universally usable (e.g., touchscreen accessibility) but also in how computers can be used to 
+				make the world more accessible as well (e.g., studying sidewalk accessibility).
+                <p></p>
+                <span class="content_header">Research Approach</span><br/>
+                Although my methods extend largely from Ubiquitous Computing and Human-Computer Interaction, my research is additionally 
+                informed by perspectives in design, information visualization, economics, and behavioral and environmental 
+                psychology. I also apply knowledge from data-intensive areas such as machine 
+                learning and signal processing to help build and evaluate my sensing systems. My research process is 
+                iterative, often beginning with lightweight formative studies and, crucially, concluding with field 
+                deployments of working technology. In this way, I am interested not only in building new technologies 
+                but in studying their actual effectiveness in the field. Finally, as my work is often interdisciplinary, 
+                I frequently collaborate with researchers both within various sub-disciplines of computer science 
+                (e.g., machine learning) as well as outside of computer science (e.g., electrical engineering and psychology).
+            </div>
+            <div id="body_right">
+                <span class="column_header">Prospective Students</span><br/>
+                I am looking for <span class="news_header">undergraduate</span> and <span class="news_header">graduate students</span> passionate about investigating the role of technology in solving high-value social problems. 
+                If this interests you, please <a href="mailto:jonf@umd.edu">contact me</a> so that we can setup a time to chat about mutual interests and potential research projects. Also, read <a href="advising.html">this</a>.
+                <p></p>
+                <span class="column_header">News</span><br/>
+                <div id="news_feed">
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+    <!-- Start of StatCounter Code for Default Guide -->
+    <script type="text/javascript">
+        var sc_project = 7582950;
+        var sc_invisible = 1;
+        var sc_security = "bb9b5240"; 
+    </script>
+    <script type="text/javascript"
+    src="http://www.statcounter.com/counter/counter.js"></script>
+    <noscript><div class="statcounter"><a title="hit counter"
+    href="http://statcounter.com/free-hit-counter/"
+    target="_blank"><img class="statcounter"
+    src="http://c.statcounter.com/7582950/0/bb9b5240/1/"
+    alt="hit counter"></a></div></noscript>
+    <!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
