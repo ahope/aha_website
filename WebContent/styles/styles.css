@@ -40,7 +40,7 @@
 	color: #444444; 
 }
 
-a:link {color:#c25059; text-decoration:none;}      /* unvisited link */
+a:link {color:#FF8119; text-decoration:none;}      /* unvisited link */
 a:visited {color:#ad474f; text-decoration:none;}  /* visited link */
 a:hover {color:#ad474f; text-decoration:underline;}  /* mouse over link */
 a:active {color:#ad474f;}  /* selected link */
@@ -121,7 +121,7 @@ a:active {color:#ad474f;}  /* selected link */
 
 #nav ul li.selected a, #nav ul li.selected a:hover, #nav ul li.selected li.selected a  {
 	color: #000;
-	border-top: 3px solid #C25059;
+	border-top: 3px solid #44B9E8;
 }
 
 #nav ul ul li.selected a, #nav ul ul li.selected a:hover {
@@ -130,13 +130,13 @@ a:active {color:#ad474f;}  /* selected link */
 
 #nav ul li a:hover, #nav ul li.sfHover a, #nav ul ul a {
 	color: #000;
-	background-color: #C25059;
-	border-top: 3px solid #C25059;
+	background-color: #44B9E8;
+	border-top: 3px solid #44B9E8;
 }
 
 #nav ul li li a:hover, #nav ul li.sfHover li a:hover {
 	border-top: 3px solid #000;
-	background-color: #C25059;
+	background-color: #44B9E8;
 }
 
 #content_container{
@@ -176,7 +176,7 @@ a:active {color:#ad474f;}  /* selected link */
 #body_content { 
 	float: left;
 	margin: 0 0 0 20px;
-	width: 56%;
+	width: 70%;
 	font-size: 14px;
     line-height:1.53em;
     color: Black;
